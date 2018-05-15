@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/default.css">
     <title>管理页面</title>
-    <style>
-    </style>
 </head>
 
 <body>
@@ -16,9 +14,9 @@
         <aside>
             <div class="newSong">新建歌曲</div>
             <ul class="songList">
-                <li class="active">歌曲1</li>
+                <li>歌曲1</li>
                 <li>歌曲2</li>
-                <li>歌曲3</li>
+                <li class="active">歌曲3</li>
                 <li>歌曲4</li>
                 <li>歌曲5</li>
                 <li>歌曲6</li>
@@ -37,49 +35,50 @@
             </div>
         </aside>
         <main>
-            <form>
+            <form class="form">
+                <h1>新建歌单</h1>
                 <div class="row">
                     <label>
-                        歌曲
-                        <input type="text">
+                        歌名
                     </label>
+                        <input type="text">
                 </div>
                 <div class="row">
                     <label>
                         歌手
-                        <input type="text">
                     </label>
+                        <input type="text">
                 </div>
                 <div class="row">
                     <label>
                         外链
-                        <input type="text">
                     </label>
+                        <input type="text">
                 </div>
-                <div class="row">
-                    <button>保存</button>
+                <div class="row actions">
+                    <button type="submit">保存</button>
                 </div>
             </form>
         </main>
     </div>
     <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
     <script>
-        var APP_ID = 'mMJ7uVClmChhmKJd918qPryB-gzGzoHsz';
-        var APP_KEY = 'BebQCW4kxcXBFNIIdgC692GN';
-        AV.init({
-            appId: APP_ID,
-            appKey: APP_KEY
-        });
-        var TestObject = AV.Object.extend('Playlist');
-        var testObject = new TestObject();
-        testObject.save({
-            name: 'test',
-            cover: 'test',
-            creatorId: 'test',
-            description: 'test',
-        }).then(function (object) {
-            alert('LeanCloud Rocks!');
-        }, () => alert('fuck'))
+        // var APP_ID = 'mMJ7uVClmChhmKJd918qPryB-gzGzoHsz';
+        // var APP_KEY = 'BebQCW4kxcXBFNIIdgC692GN';
+        // AV.init({
+        //     appId: APP_ID,
+        //     appKey: APP_KEY
+        // });
+        // var TestObject = AV.Object.extend('Playlist');
+        // var testObject = new TestObject();
+        // testObject.save({
+        //     name: 'test',
+        //     cover: 'test',
+        //     creatorId: 'test',
+        //     description: 'test',
+        // }).then(function (object) {
+        //     alert('LeanCloud Rocks!');
+        // }, () => alert('fuck'))
     </script>
     <script src="../vendors/moxie.js"></script>
     <script src="../node_modules/plupload/js/plupload.min.js"></script>
